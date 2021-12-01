@@ -91,3 +91,25 @@ while (increment < splittedSentence.length)   {
 }
 
 console.log(numberOfEt);
+
+/**************************** BONUS 2 **************************************/
+
+const phraseToCheck = "No 'x' in Nixon";
+
+function isPalindrome (phraseToCheck) {
+    let index = 0;
+    const cleaned = phraseToCheck.trim();
+    const onlyLetters = cleaned.replace(/[^a-zA-Z]/g, '').toUpperCase();
+    let lastIndex = onlyLetters.length-1;
+    
+    while (index < onlyLetters.length / 2) {
+        if(onlyLetters[index] !== onlyLetters[lastIndex])   {
+            return false;
+        }
+        index++;
+        lastIndex--;
+    }
+    return true;
+}
+
+console.log(isPalindrome(phraseToCheck));

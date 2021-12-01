@@ -12,6 +12,8 @@ console.log(`The navigator's name is ${hacker1}`);
 
 /***************************** 3.1 *****************************************/
 
+// comparing strings with different return strings depending the result (should check string type inputs...)
+
 if (hacker1.length > hacker2.length) {
     console.log(`The driver has the longest name, it has ${hacker1.length} characters.`)
 } else if (hacker1.length < hacker2.length) {
@@ -30,13 +32,26 @@ console.log(separatedLetters);
 
 /***************************** 3.2 *****************************************/
 
+
+// split -> create array / reverse array elements... / join -> array to string
+
 const reversedHacker2 = hacker2.split("").reverse().join("");
 
 console.log(reversedHacker2);
 
+// Alternative way to do the same
+
+let reversedHack2="";
+for (let index = reversedHacker2.length-1; index >= 0; index--) {
+    reversedHack2 += hacker2[index];
+}
+console.log(reversedHack2);
+
 /***************************** 3.3 *****************************************/
 
 let upperHacker2 = hacker2.toUpperCase();
+
+// FIRST VERSION WITH JS STRING METHOD (LOCALECOMPARE)
 /*
 if (upperhacker1.localeCompare(upperHacker2) === -1) {
     console.log("The driver's name goes first.");
@@ -44,9 +59,12 @@ if (upperhacker1.localeCompare(upperHacker2) === -1) {
     console.log("Yo, the navigator goes first definitely.");
 }   else   {
     console.log("What?! You both have the same name?");
-}*/
+}
+*/
 
 /***************************** 3.3 bis ***************************************/
+
+// second version with direct comparisons
 
 function stringCompare(a, b) {
     if (a < b) {
@@ -68,6 +86,8 @@ Cras nec quam risus. Ut id varius odio. Mauris efficitur mauris ac metus dapibus
 
 Nullam porttitor leo et nisl blandit, sit amet consectetur lacus fringilla. Vivamus erat elit, sodales ac elementum eget, molestie sed velit. Ut nisl quam, auctor id cursus non, consequat sed ligula. Etiam nec felis magna. Nunc ullamcorper fringilla justo, ac commodo neque elementum quis. Donec quis gravida ligula. Vestibulum lectus orci, venenatis in ex vitae, malesuada maximus purus.`;
 
+// should create functions for chaining, check string type and use replace with regex
+
 const splittedSentence = sentence.split(' ');
 
 for (let index = 0; index < splittedSentence.length; index++) {
@@ -78,7 +98,12 @@ for (let index = 0; index < splittedSentence.length; index++) {
     splittedSentence[index].replace(',', '');
 }
 
-console.log(splittedSentence.length);
+// store the number of items inn array as words count
+
+const count = splittedSentence.length;
+console.log(count);
+
+// counting number of "et" occurences
 
 let increment = 0;
 let numberOfEt = 0;

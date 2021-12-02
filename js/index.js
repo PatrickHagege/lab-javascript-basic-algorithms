@@ -123,7 +123,7 @@ const phraseToCheck = "No 'x' in Nixon";
 
 function isPalindrome (phraseToCheck) {
     let index = 0;
-    const onlyLetters = phraseToCheck.replace(/[^a-zA-Z]/g, '').toUpperCase().trim();
+    const onlyLetters = phraseToCheck.replace(/[^a-zA-Z]/g, '').toUpperCase();
     let lastIndex = onlyLetters.length-1;
     
     while (index < onlyLetters.length / 2) {
